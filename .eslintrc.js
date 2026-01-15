@@ -1,8 +1,9 @@
-export default {
+module.exports = {
   'env': {
     'browser': true,
     'es6': true,
-    'jest/globals': true
+    'jest/globals': true,
+    'node': true
   },
   'extends': [
     'eslint:recommended',
@@ -16,8 +17,14 @@ export default {
     'sourceType': 'module'
   },
   'plugins': [
-    'react', 'jest'
+    'react','jest'
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
   'rules': {
     'indent': [
       'error',
@@ -43,6 +50,8 @@ export default {
       'error', { 'before': true, 'after': true }
     ],
     'no-console': 'error',
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
   }
 }
